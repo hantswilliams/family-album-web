@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mx-auto max-w-screen-lg">
+    <h2 class="text-3xl font-bold mb-4 text-center">Terms of Service</h2>
+    <p class="mb-6 text-center">Welcome to The Family Album. By using this application, you agree to the following terms and conditions:</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">1. Acceptance of Terms</h3>
+    <p class="mb-4  ">The Family Album is provided by a solo developer ("I", "me", or "the developer"). By downloading, accessing, or using the application, you agree to be bound by these terms of service. If you do not agree, please discontinue use of the application immediately.</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">2. Use of the Application</h3>
+    <p class="mb-4  ">The Family Album is intended for personal, non-commercial use only. You agree not to use the application for any unlawful or unauthorized purposes. I reserve the right to revoke access to the application at any time for misuse or violation of these terms.</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">3. Data and Privacy</h3>
+    <p class="mb-4  ">Your data is important, and I strive to protect it. The Family Album uses industry-standard encryption to secure your data in transit. Please refer to the <a href="{{ url_for('privacy') }}" class="text-blue-500 hover:underline">Privacy Policy</a> for more details on how your data is handled.</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">4. Limitations of Support</h3>
+    <p class="mb-4  ">Support for The Family Album is limited, as this is a solo-developed project. I will do my best to respond to inquiries within 48 hours during Monday to Friday, based on Eastern Standard Time (EST).</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">5. Disclaimer of Warranties</h3>
+    <p class="mb-4  ">The application is provided "as is" without any warranties, express or implied. I disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">6. Limitation of Liability</h3>
+    <p class="mb-4  ">To the fullest extent permitted by law, I shall not be liable for any damages arising from the use or inability to use the application, including but not limited to direct, indirect, incidental, punitive, or consequential damages.</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">7. Modifications to Terms</h3>
+    <p class="mb-4  ">I reserve the right to modify these terms of service at any time. Continued use of the application following any changes constitutes your acceptance of the updated terms. It is your responsibility to review these terms periodically.</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">8. Governing Law</h3>
+    <p class="mb-4  ">These terms are governed by and construed in accordance with the laws of the United States and the state of [Insert State]. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts in [Insert State].</p>
+
+    <h3 class="text-2xl font-bold mb-2  ">9. Contact Information</h3>
+    <p class="mb-4  ">If you have any questions about these terms, please contact me at <a href="mailto:hantsawilliams@gmail.com" class="text-blue-500 hover:underline">hantsawilliams@gmail.com</a>.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center min-h-screen text-center">
+    <h2 class="text-5xl font-bold mb-6">Welcome to The Family Album</h2>
+    <p class="text-lg max-w-screen-lg mb-8">
+        Cherish your family’s precious moments with The Family Album! This easy-to-use app helps you securely store, organize, and share photos with loved ones, all in one place. Upload and store your family’s photos securely using our encrypted cloud backend, create and customize albums to organize your cherished memories, and enjoy preloaded images for a seamless browsing experience. Share albums or individual photos with friends and family instantly, engage with loved ones by leaving comments on shared images, and control access to your albums by setting view-only or edit capabilities for shared users. We prioritize your privacy and convenience, ensuring that your memories are encrypted in transit and stored securely. Download The Family Album now and start building a lifetime of memories today! Check out our features below:
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full px-4 max-w-screen-lg">
+        <div class="p-2 border-4 border-black rounded-lg">
+            <img src="{{ url_for('static', filename='screenshots/FamilyAlbum_LoadView_Resized.png') }}" alt="Screenshot 1" class="rounded-lg">
+        </div>
+        <div class="p-2 border-4 border-black rounded-lg">
+            <img src="{{ url_for('static', filename='screenshots/FamilyAlbum_AlbumSelector_Resized.png') }}" alt="Screenshot 2" class="rounded-lg">
+        </div>
+        <div class="p-2 border-4 border-black rounded-lg">
+            <img src="{{ url_for('static', filename='screenshots/FamilyAlbum_AlbumPhotos_Resized.png') }}" alt="Screenshot 3" class="rounded-lg">
+        </div>
+        <div class="p-2 border-4 border-black rounded-lg">
+            <img src="{{ url_for('static', filename='screenshots/FamilyAlbum_DetailView_Resized.png') }}" alt="Screenshot 4" class="rounded-lg">
+        </div>
+    </div>
+</div>
+{% endblock %}
