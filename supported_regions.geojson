@@ -1,0 +1,25 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Family Album Continental United States Coverage Areas",
+          "description": "Coverage area for the 48 contiguous states of the United States."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-125.0, 24.396308],  
+              [-66.93457, 24.396308],  
+              [-66.93457, 49.384358],  
+              [-125.0, 49.384358],  
+              [-125.0, 24.396308]  
+            ]
+          ]
+        }
+      }
+    ]
+  }
+  
