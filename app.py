@@ -52,37 +52,48 @@ def reset_password():
 
 @app.route("/reset-password-form", methods=["GET", "POST"])
 def reset_password_form():
-    # Extract the 'code' parameter from the query string
     code = request.args.get("code")
     
     if not code:
         flash("Invalid or missing reset code. Please request a new password reset.", "error")
         return redirect(url_for("reset_password"))
-
+    
     if request.method == "GET":
-        return render_template("reset_password_form.html", code=code)  # Pass the code to the template for debugging or hidden use
+        return render_template("reset_password_form.html", code=code)
     
     new_password = request.form.get("new_password")
     confirm_password = request.form.get("confirm_password")
     
     if not new_password or not confirm_password:
         flash("Both password fields are required.", "error")
-        return redirect(url_for("reset_password_form", code=code))  # Include the code in the redirect URL
+        return redirect(url_for("reset_password_form", code=code))
     
     if new_password != confirm_password:
         flash("Passwords do not match.", "error")
-        return redirect(url_for("reset_password_form", code=code))  # Include the code in the redirect URL
-
+        return redirect(url_for("reset_password_form", code=code))
+    
     try:
-        # Use the 'code' parameter to authenticate the password reset request
-        supabase_client.auth.update_user({"password": new_password}, {"code": code})
-        flash("Your password has been updated successfully.", "success")
+        # Update password using the reset code
+        response = supabase_client.auth.update_user(
+            {"password": new_password},
+            {"code": code}
+        )
+        
+        # Debugging: Log the API response
+        print("[DEBUG] Password update response:", response)
+        
+        # Check if the update was successful
+        if response.get("error"):
+            flash(f"Error updating password: {response['error']['message']}", "error")
+            return redirect(url_for("reset_password_form", code=code))
+        
+        flash("Your password has been updated successfully. You can now log in.", "success")
     except Exception as e:
+        print("[ERROR] Exception during password update:", str(e))
         flash(f"Error updating password: {str(e)}", "error")
-        return redirect(url_for("reset_password_form", code=code))  # Include the code in the redirect URL
+        return redirect(url_for("reset_password_form", code=code))
     
     return redirect(url_for("index"))
-
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5001)
