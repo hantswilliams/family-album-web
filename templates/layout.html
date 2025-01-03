@@ -14,13 +14,31 @@
                 <img src="{{ url_for('static', filename='icon_boarder.png') }}" alt="Logo" class="w-10 h-10 rounded-lg">
                 <h1 class="text-3xl font-bold">The Family Album</h1>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="text-white focus:outline-none lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+
             <!-- Navigation Links -->
-            <nav class="space-x-4">
+            <nav id="menu" class="hidden lg:flex space-x-4">
                 <a href="{{ url_for('index') }}" class="text-xl hover:underline">About</a>
                 <a href="{{ url_for('support') }}" class="text-xl hover:underline">Support</a>
                 <a href="{{ url_for('terms') }}" class="text-xl hover:underline">Terms of Service</a>
                 <a href="{{ url_for('privacy') }}" class="text-xl hover:underline">Privacy Policy</a>
+                <a href="{{ url_for('reset_password') }}" class="text-xl hover:underline">Password Reset</a>
             </nav>
+        </div>
+
+        <!-- Mobile Menu Items -->
+        <div id="mobile-menu" class="hidden bg-zinc-800 text-white">
+            <a href="{{ url_for('index') }}" class="block px-4 py-2 hover:bg-zinc-700">About</a>
+            <a href="{{ url_for('support') }}" class="block px-4 py-2 hover:bg-zinc-700">Support</a>
+            <a href="{{ url_for('terms') }}" class="block px-4 py-2 hover:bg-zinc-700">Terms of Service</a>
+            <a href="{{ url_for('privacy') }}" class="block px-4 py-2 hover:bg-zinc-700">Privacy Policy</a>
+            <a href="{{ url_for('reset_password') }}" class="block px-4 py-2 hover:bg-zinc-700">Password Reset</a>
         </div>
     </header>
     <main class="container mx-auto px-4 py-8">
@@ -29,5 +47,16 @@
     <footer class="bg-gray-200 text-gray-600 text-center py-4 mt-8">
         <p>&copy; 2024 The Family Album. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            // Toggle the visibility of the mobile menu
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
